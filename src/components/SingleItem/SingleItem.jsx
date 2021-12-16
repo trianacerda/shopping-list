@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 
 export default function SingleItem({ item, onChange, onDelete }) {
@@ -9,12 +10,18 @@ export default function SingleItem({ item, onChange, onDelete }) {
     itemContent = (
       <>
         <input
+          type="text"
           value={item.text}
           onChange={(e) => {
             onchange({ ...item, text: e.target.value });
           }}
         />
-        <button type="button" onClick={() => setUpdate(false)}>
+        <button
+          aria-label="save"
+          type="button"
+          name="save"
+          onClick={() => setUpdate(false)}
+        >
           Save Item
         </button>
       </>
@@ -23,7 +30,11 @@ export default function SingleItem({ item, onChange, onDelete }) {
     itemContent = (
       <>
         <p>{item.text}</p>
-        <button type="button" onClick={() => setUpdate(true)}>
+        <button
+          aria-label="update"
+          type="button"
+          onClick={() => setUpdate(true)}
+        >
           Update Item
         </button>
       </>
@@ -41,8 +52,9 @@ export default function SingleItem({ item, onChange, onDelete }) {
       />
       {itemContent}
       <button
+        aria-label="delete"
         type="button"
-        className="delete-btn"
+        name="delete"
         onClick={() => onDelete(item.id)}
       >
         Delete Item

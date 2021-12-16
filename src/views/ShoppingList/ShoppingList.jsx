@@ -1,7 +1,7 @@
+import React from 'react';
 import { useReducer } from 'react';
 import AddItem from '../../components/AddItem/AddItem';
 import ItemList from '../../components/ItemList/ItemList';
-import SingleItem from '../../components/SingleItem/SingleItem';
 
 const firstItems = [
   { id: 0, text: 'candy🍬', completed: false },
