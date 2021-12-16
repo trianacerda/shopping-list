@@ -1,9 +1,6 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-// import ItemList from '../ItemList/ItemList';
-import SingleItem from './SingleItem';
 import App from '../../App';
 
 const item = {
