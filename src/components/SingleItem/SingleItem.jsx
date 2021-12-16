@@ -1,9 +1,11 @@
 import { useState } from 'react';
 
-export default function Item({ item, onChange, onDelete }) {
+export default function SingleItem({ item, onChange, onDelete }) {
+  console.log('item', item);
   const [update, setUpdate] = useState(false);
 
   let itemContent;
+
   if (update) {
     itemContent = (
       <>
@@ -13,7 +15,7 @@ export default function Item({ item, onChange, onDelete }) {
             onChange({ ...item, text: e.target.value });
           }}
         />
-        <button type="button" onClick={() => setupdate(true)}>
+        <button type="button" onClick={() => setUpdate(false)}>
           Save Item
         </button>
       </>
@@ -22,7 +24,7 @@ export default function Item({ item, onChange, onDelete }) {
     itemContent = (
       <>
         <p>{item.text}</p>
-        <button type="button" onClick={() => setupdate(true)}>
+        <button type="button" onClick={() => setUpdate(true)}>
           Update Item
         </button>
       </>
@@ -30,12 +32,12 @@ export default function Item({ item, onChange, onDelete }) {
   }
 
   return (
-    <>
+    <div>
       <input
         type="checkbox"
-        checked={item.done}
+        checked={item.completed}
         onChange={(e) => {
-          onChange({ ...item, done: e.target.checked });
+          onChange({ ...item, completed: e.target.value });
         }}
       />
       {itemContent}
@@ -46,6 +48,6 @@ export default function Item({ item, onChange, onDelete }) {
       >
         Delete Item
       </button>
-    </>
+    </div>
   );
 }

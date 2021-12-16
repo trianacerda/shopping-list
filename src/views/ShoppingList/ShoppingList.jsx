@@ -1,8 +1,9 @@
 import { useReducer } from 'react';
 import AddItem from '../../components/AddItem/AddItem';
 import ItemList from '../../components/ItemList/ItemList';
+import SingleItem from '../../components/SingleItem/SingleItem';
 
-const firstListItems = [
+const firstItems = [
   { id: 0, text: 'candy🍬', completed: false },
   { id: 1, text: 'butter🧈', completed: false },
   { id: 2, text: 'bread🍞', completed: false },
@@ -18,7 +19,7 @@ function itemsReducer(items, action) {
         {
           id: action.id,
           text: action.text,
-          done: false,
+          completed: false,
         },
       ];
     }
@@ -40,7 +41,7 @@ function itemsReducer(items, action) {
 }
 
 export default function ShoppingList() {
-  const [items, dispatch] = useReducer(itemsReducer, firstListItems);
+  const [items, dispatch] = useReducer(itemsReducer, firstItems);
 
   const handleAddItem = (text) => {
     dispatch({
@@ -68,6 +69,7 @@ export default function ShoppingList() {
     <>
       <h1>My Precious Shopping List</h1>
       <AddItem onAddItem={handleAddItem} />
+
       <ItemList
         items={items}
         onChangeItem={handleChangeItem}
