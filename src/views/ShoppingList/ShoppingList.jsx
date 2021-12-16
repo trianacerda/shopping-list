@@ -69,12 +69,13 @@ export default function ShoppingList() {
     <>
       <h1>My Precious Shopping List</h1>
       <AddItem onAddItem={handleAddItem} />
-
-      <ItemList
-        items={items}
-        onChangeItem={handleChangeItem}
-        onDeleteItem={handleDeleteItem}
-      />
+      <ul>
+        <ItemList
+          items={items}
+          onChangeItem={handleChangeItem}
+          onDeleteItem={handleDeleteItem}
+        />
+      </ul>
     </>
   );
 }

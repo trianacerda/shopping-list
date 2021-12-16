@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 export default function SingleItem({ item, onChange, onDelete }) {
-  console.log('item', item);
   const [update, setUpdate] = useState(false);
 
   let itemContent;
@@ -12,7 +11,7 @@ export default function SingleItem({ item, onChange, onDelete }) {
         <input
           value={item.text}
           onChange={(e) => {
-            onChange({ ...item, text: e.target.value });
+            onchange({ ...item, text: e.target.value });
           }}
         />
         <button type="button" onClick={() => setUpdate(false)}>
