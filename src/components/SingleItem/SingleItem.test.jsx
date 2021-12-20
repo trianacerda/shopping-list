@@ -22,6 +22,9 @@ it('should render a single item within a list', async () => {
     const updateItemInput = await screen.findByText('pineapple');
     expect(updateItemInput).toBeInTheDocument();
   });
-
   expect(updateBtn[0]).toBeInTheDocument();
+
+  const deleteBtn = await screen.findAllByRole('button', { name: 'delete' });
+  userEvent.click(deleteBtn[0]);
+  expect(deleteBtn[0]).toBeEnabled();
 });

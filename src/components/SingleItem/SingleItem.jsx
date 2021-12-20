@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import SingleItemStyle from './SingleItemStyle.css';
 
 export default function SingleItem({ item, onChange, onDelete }) {
   const [update, setUpdate] = useState(false);
@@ -54,8 +55,7 @@ export default function SingleItem({ item, onChange, onDelete }) {
       <button
         aria-label="delete"
         type="button"
-        name="delete"
-        onClick={() => onDelete(item.id)}
+        onClick={() => onDelete(item.id, item.completed)}
       >
         Delete Item
       </button>
