@@ -44,6 +44,7 @@ export default function SingleItem({ item, onChange, onDelete }) {
 
   return (
     <div>
+      Completed:
       <input
         type="checkbox"
         checked={item.completed}
