@@ -14,7 +14,7 @@ export default function SingleItem({ item, onChange, onDelete }) {
           type="text"
           value={item.text}
           onChange={(e) => {
-            onchange({ ...item, text: e.target.value });
+            onChange({ ...item, text: e.target.value });
           }}
         />
         <button
