@@ -1,0 +1,15 @@
+button {
+  display: flex;
+  border-radius: 20px;
+  color: maroon;
+  background-color: moccasin;
+  border-color: mediumaquamarine;
+}
+li {
+  display: inline-block;
+  margin: 20px;
+  font-style: oblique;
+  font-size: large;
+  border-style: groove;
+  border-color: maroon;
+}
